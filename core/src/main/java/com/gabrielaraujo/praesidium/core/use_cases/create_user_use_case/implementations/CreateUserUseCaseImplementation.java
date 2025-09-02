@@ -11,12 +11,11 @@ import com.gabrielaraujo.praesidium.core.use_cases.create_user_use_case.io.Creat
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-public class CreateUserUseCaseImplementations extends CreateUserUseCase {
+public class CreateUserUseCaseImplementation extends CreateUserUseCase {
     private final SaveUserOnDbPort port;
 
     @Override
