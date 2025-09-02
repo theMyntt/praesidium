@@ -13,16 +13,16 @@ import java.net.URI;
 @Component
 public class DynamoDbConfig {
 
-    @Value("{spring.cloud.aws.dynamodb.url}")
+    @Value("${spring.cloud.aws.dynamodb.url}")
     private String url;
 
-    @Value("{spring.cloud.aws.dynamodb.region}")
+    @Value("${spring.cloud.aws.dynamodb.region}")
     private String region;
 
-    @Value("{spring.cloud.aws.credentials.access-key}")
+    @Value("${spring.cloud.aws.credentials.access-key}")
     private String accessKey;
 
-    @Value("{spring.cloud.aws.credentials.secret-key}")
+    @Value("${spring.cloud.aws.credentials.secret-key}")
     private String privateKey;
 
     @Bean
