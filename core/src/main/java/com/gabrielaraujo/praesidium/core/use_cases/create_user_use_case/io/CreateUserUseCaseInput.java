@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.validator.constraints.Length;
 
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class CreateUserUseCaseInput {
 
     @NotNull
     @NotBlank
-    @Min(12)
+    @Length(min = 10)
     private String password;
 
     @NotNull
