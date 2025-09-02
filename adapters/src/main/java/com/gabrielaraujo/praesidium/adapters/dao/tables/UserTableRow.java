@@ -3,6 +3,7 @@ package com.gabrielaraujo.praesidium.adapters.dao.tables;
 import com.gabrielaraujo.praesidium.adapters.dao.resolvers.DynamoDbTableName;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbPartitionKey;
 
@@ -11,6 +12,7 @@ import java.util.UUID;
 
 @Builder
 @Getter
+@Setter
 @DynamoDbBean
 @DynamoDbTableName(name = "users")
 public class UserTableRow {
