@@ -1,5 +1,7 @@
 plugins {
     id("java")
+    id("org.springframework.boot") version "3.5.5"
+    id("io.spring.dependency-management") version "1.1.7"
 }
 
 group = "com.gabrielaraujo.praesidium.core"
@@ -16,6 +18,9 @@ repositories {
 }
 
 dependencies {
+    implementation("org.springframework.boot:spring-boot-starter")
+    compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
