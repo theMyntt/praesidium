@@ -18,6 +18,7 @@ repositories {
 }
 
 dependencies {
+    implementation(project(":core"))
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.springframework.boot:spring-boot-starter-web")
     compileOnly("org.projectlombok:lombok")
