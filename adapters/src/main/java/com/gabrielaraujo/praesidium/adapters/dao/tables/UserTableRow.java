@@ -7,6 +7,7 @@ import lombok.Setter;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbPartitionKey;
 
+import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -20,6 +21,9 @@ public class UserTableRow {
     private String name;
     private String email;
     private String password;
+    private Boolean isBlocked;
+    private Boolean isSuspended;
+    private OffsetDateTime timeSuspended;
     private List<String> roles;
 
     @DynamoDbPartitionKey
