@@ -7,7 +7,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - AWS_DYNAMODB_URL=${AWS_DYNAMODB_URL:-http://dybamodb:8000}
+      - AWS_DYNAMODB_URL=${AWS_DYNAMODB_URL:-http://pr_dynamodb:8000}
       - AWS_DYNAMODB_REGION=${AWS_DYNAMODB_REGION:-us-east-1}
       - AWS_ACCESS_KEY=${AWS_ACCESS_KEY:-dummy}
       - AWS_SECRET_KEY=${AWS_SECRET_KEY:-dummy}
@@ -41,7 +41,7 @@ services:
           --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5
           --region us-east-1
           --endpoint-url ${AWS_DYNAMODB_URL}
-      "
+        "
     environment:
       - AWS_DYNAMODB_URL=${AWS_DYNAMODB_URL:-http://dybamodb:8000}
 
