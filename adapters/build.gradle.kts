@@ -4,7 +4,7 @@ plugins {
     id("io.spring.dependency-management") version "1.1.7"
 }
 
-group = "com.gabrielaraujo.praesidium"
+group = "com.gabrielaraujo.praesidium.adapters"
 version = "1.0-SNAPSHOT"
 
 java {

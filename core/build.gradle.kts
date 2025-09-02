@@ -2,7 +2,7 @@ plugins {
     id("java")
 }
 
-group = "com.gabrielaraujo.praesidium"
+group = "com.gabrielaraujo.praesidium.core"
 version = "1.0-SNAPSHOT"
 
 java {
