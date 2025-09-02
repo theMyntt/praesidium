@@ -19,6 +19,8 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("software.amazon.awssdk:dynamodb:2.21.0")
+    implementation("software.amazon.awssdk:auth:2.21.0")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
