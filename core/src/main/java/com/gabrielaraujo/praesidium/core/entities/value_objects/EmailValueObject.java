@@ -1,4 +1,4 @@
-package com.gabrielaraujo.praesidium.core.entities.valueObjects;
+package com.gabrielaraujo.praesidium.core.entities.value_objects;
 
 public record EmailValueObject(String value) {
     private static final String EMAIL_REGEX =

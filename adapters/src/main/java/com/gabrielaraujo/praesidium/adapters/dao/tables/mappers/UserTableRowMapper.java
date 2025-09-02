@@ -3,8 +3,8 @@ package com.gabrielaraujo.praesidium.adapters.dao.tables.mappers;
 import com.gabrielaraujo.praesidium.adapters.dao.tables.UserTableRow;
 import com.gabrielaraujo.praesidium.core.entities.UserEntity;
 import com.gabrielaraujo.praesidium.core.entities.enums.RolesEnum;
-import com.gabrielaraujo.praesidium.core.entities.valueObjects.EmailValueObject;
-import com.gabrielaraujo.praesidium.core.entities.valueObjects.PasswordValueObject;
+import com.gabrielaraujo.praesidium.core.entities.value_objects.EmailValueObject;
+import com.gabrielaraujo.praesidium.core.entities.value_objects.PasswordValueObject;
 
 public class UserTableRowMapper {
     public static UserTableRow toPersistence(UserEntity user) {

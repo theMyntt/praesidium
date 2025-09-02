@@ -2,8 +2,8 @@ package com.gabrielaraujo.praesidium.core.entities;
 
 import com.gabrielaraujo.praesidium.core.entities.enums.RolesEnum;
 import com.gabrielaraujo.praesidium.core.entities.exceptions.*;
-import com.gabrielaraujo.praesidium.core.entities.valueObjects.EmailValueObject;
-import com.gabrielaraujo.praesidium.core.entities.valueObjects.PasswordValueObject;
+import com.gabrielaraujo.praesidium.core.entities.value_objects.EmailValueObject;
+import com.gabrielaraujo.praesidium.core.entities.value_objects.PasswordValueObject;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

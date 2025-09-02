@@ -1,4 +1,4 @@
-package com.gabrielaraujo.praesidium.core.entities.valueObjects;
+package com.gabrielaraujo.praesidium.core.entities.value_objects;
 
 import lombok.Getter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
