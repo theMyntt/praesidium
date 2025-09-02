@@ -32,7 +32,7 @@ public class DynamoDbConfig {
                 .region(Region.of(region))
                 .credentialsProvider(
                         StaticCredentialsProvider.create(
-                                AwsBasicCredentials.create("dummy", "dummy")
+                                AwsBasicCredentials.create(accessKey, privateKey)
                         )
                 )
                 .build();
