@@ -5,11 +5,20 @@ import com.gabrielaraujo.praesidium.core.use_cases.create_user_use_case.implemen
 import io.awspring.cloud.dynamodb.DynamoDbTemplate;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient;
+import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 
 @Service
-@RequiredArgsConstructor
 public class SaveUserOnDbPortAdapter implements SaveUserOnDbPort {
     private final DynamoDbTemplate client;
+
+    public SaveUserOnDbPortAdapter(DynamoDbClient dynamoDbClient) {
+        DynamoDbEnhancedClient enhancedClient = DynamoDbEnhancedClient.builder()
+                .dynamoDbClient(dynamoDbClient)
+                .build();
+
+        this.client = new DynamoDbTemplate(enhancedClient);
+    }
 
     @Override
     public SaveUserOnDbPortOutput execute(SaveUserOnDbPortInput input) {

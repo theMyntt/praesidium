@@ -22,6 +22,7 @@ dependencies {
     implementation(project(":core"))
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.5")
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
     implementation(platform("io.awspring.cloud:spring-cloud-aws:3.3.0"))

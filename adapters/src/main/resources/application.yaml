@@ -10,3 +10,9 @@ spring:
 
   application:
     name: PraesidiumAPI
+
+springdoc:
+  api-docs:
+    path: /api/docs/v1
+  swagger-ui:
+        path: /api/docs/v1/swagger-ui.html

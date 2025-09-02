@@ -1,10 +1,12 @@
 package com.gabrielaraujo.praesidium.adapters.dao.config;
 
+import io.awspring.cloud.dynamodb.DynamoDbTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
+import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 
@@ -36,5 +38,14 @@ public class DynamoDbConfig {
                         )
                 )
                 .build();
+    }
+
+    @Bean
+    public DynamoDbTemplate dynamoDbTemplate(DynamoDbClient client) {
+        DynamoDbEnhancedClient enhancedClient = DynamoDbEnhancedClient.builder()
+                .dynamoDbClient(client)
+                .build();
+
+        return new DynamoDbTemplate(enhancedClient);
     }
 }
