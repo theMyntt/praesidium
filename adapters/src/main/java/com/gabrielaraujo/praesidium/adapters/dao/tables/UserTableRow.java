@@ -1,6 +1,5 @@
 package com.gabrielaraujo.praesidium.adapters.dao.tables;
 
-import com.gabrielaraujo.praesidium.adapters.dao.resolvers.DynamoDbTableName;
 import lombok.*;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbPartitionKey;
@@ -15,7 +14,6 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @DynamoDbBean
-@DynamoDbTableName(name = "users")
 public class UserTableRow {
     private UUID id;
     private String name;

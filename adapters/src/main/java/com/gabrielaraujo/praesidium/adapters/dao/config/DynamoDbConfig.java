@@ -1,8 +1,8 @@
 package com.gabrielaraujo.praesidium.adapters.dao.config;
 
-import io.awspring.cloud.dynamodb.DynamoDbTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
@@ -12,7 +12,7 @@ import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 
 import java.net.URI;
 
-@Component
+@Configuration
 public class DynamoDbConfig {
 
     @Value("${spring.cloud.aws.dynamodb.url}")
@@ -25,27 +25,22 @@ public class DynamoDbConfig {
     private String accessKey;
 
     @Value("${spring.cloud.aws.credentials.secret-key}")
-    private String privateKey;
+    private String secretKey;
 
     @Bean
-    public DynamoDbClient dynamoDbClient() {
-        return DynamoDbClient.builder()
+    public DynamoDbEnhancedClient dynamoDbEnhancedClient() {
+        var dynamoDbClient = DynamoDbClient.builder()
                 .endpointOverride(URI.create(url))
                 .region(Region.of(region))
                 .credentialsProvider(
                         StaticCredentialsProvider.create(
-                                AwsBasicCredentials.create(accessKey, privateKey)
+                                AwsBasicCredentials.create(accessKey, secretKey)
                         )
                 )
                 .build();
-    }
 
-    @Bean
-    public DynamoDbTemplate dynamoDbTemplate(DynamoDbClient client) {
-        DynamoDbEnhancedClient enhancedClient = DynamoDbEnhancedClient.builder()
-                .dynamoDbClient(client)
+        return DynamoDbEnhancedClient.builder()
+                .dynamoDbClient(dynamoDbClient)
                 .build();
-
-        return new DynamoDbTemplate(enhancedClient);
     }
 }
