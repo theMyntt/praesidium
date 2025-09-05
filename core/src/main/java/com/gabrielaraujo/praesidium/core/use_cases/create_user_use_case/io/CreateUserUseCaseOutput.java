@@ -9,4 +9,5 @@ public class CreateUserUseCaseOutput {
     private String message;
     private String id;
     private Integer statusCode;
+    private Boolean isError;
 }

@@ -50,6 +50,7 @@ public class CreateUserUseCaseImplementation extends CreateUserUseCase {
                 .message("Created.")
                 .id(portOutput.getId().toString())
                 .statusCode(201)
+                .isError(false)
                 .build();
     }
 }
