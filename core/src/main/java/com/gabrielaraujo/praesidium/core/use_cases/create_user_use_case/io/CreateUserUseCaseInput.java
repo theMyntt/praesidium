@@ -17,16 +17,16 @@ public class CreateUserUseCaseInput {
     @NotBlank
     private String name;
 
-    @Email
-    @NotNull
-    @NotBlank
+    @Email(message = "Invalid e-mail")
+    @NotNull(message = "E-mail can't be null")
+    @NotBlank(message = "E-mail can't be blank")
     private String email;
 
-    @NotNull
-    @NotBlank
-    @Length(min = 10)
+    @NotNull(message = "Password can't be null")
+    @NotBlank(message = "Password can't be blank")
+    @Length(min = 10, message = "Password too small")
     private String password;
 
-    @NotNull
+    @NotNull(message = "User needs to be 1 role")
     private List<String> roles;
 }
