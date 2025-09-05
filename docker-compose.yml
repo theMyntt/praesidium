@@ -29,11 +29,11 @@ services:
     image: amazon/aws-cli
     depends_on:
       - dynamodb
-    container_name: pr_dynamo_init
+    container_name: prdynamodb_init
     networks:
       - pr_network
     entrypoint: >
-      aws dynamodb create-table --table-name users --attribute-definitions AttributeName=id,AttributeType=S --key-schema AttributeName=id,KeyType=HASH --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5 --region us-east-1 --endpoint-url http://prdynamodb:8000
+      /bin/sh -c "aws dynamodb create-table --table-name users --attribute-definitions AttributeName=id,AttributeType=S --key-schema AttributeName=id,KeyType=HASH --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5 --region us-east-1 --endpoint-url http://prdynamodb:8000; tail -f /dev/null"
 
 networks:
   pr_network:
